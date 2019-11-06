@@ -1,0 +1,131 @@
+{
+	"variables": [],
+	"info": {
+		"name": "bike case app",
+		"_postman_id": "138cce3e-f890-2ca6-8ca7-77442e8b2cb8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "case",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/v1/case/add",
+					"request": {
+						"url": "localhost:3000/api/v1/case/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"color\":\"black\",\n\t\"type\":\"sports\",\n\t\"owner\":\"rahul\",\n\t\"dateOfTheft\":\"12-07-1995\",\n\t\"license\":\"license\",\n\t\"theftDescription\":\"market\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/v1/case/find",
+					"request": {
+						"url": "localhost:3000/api/v1/case/find",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/v1/case/resolve",
+					"request": {
+						"url": "localhost:3000/api/v1/case/resolve",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"caseId\":4\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "officer",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/v1/officer/add",
+					"request": {
+						"url": "localhost:3000/api/v1/officer/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"john doe 6\",\n\t\"departmentId\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "department",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/v1/department/add",
+					"request": {
+						"url": "localhost:3000/api/v1/department/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"search squad 2\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:3000/api/v1/health",
+			"request": {
+				"url": "localhost:3000/api/v1/health",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

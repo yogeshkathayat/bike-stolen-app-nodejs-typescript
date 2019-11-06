@@ -1,0 +1,622 @@
+[
+  {
+    "type": "post",
+    "url": "/api/v1/case/add",
+    "title": "add case",
+    "description": "<p>add a case</p>",
+    "version": "1.0.0",
+    "name": "add",
+    "group": "case",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license",
+            "description": "<p>license of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "color",
+            "description": "<p>color  of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type  of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "dateOfTheft",
+            "description": "<p>dateOfTheft of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "theftDescription",
+            "description": "<p>theftDescription</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "license",
+            "description": "<p>license of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "color",
+            "description": "<p>color  of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type  of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner name</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dateOfTheft",
+            "description": "<p>dateOfTheft of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "theftDescription",
+            "description": "<p>theftDescription</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>status of case</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "officerId",
+            "description": "<p>id of officer that has been assinged to the case</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \"status\": true,\n \"code\": 200,\n \"message\": \"Sucess\",\n \"appVersion\": \"v1.0.0\",\n \"result\":\n      {\n          \"id\": 4,\n          \"color\": \"blue\",\n          \"type\": \"sports\",\n          \"owner\": \"yogesh\",\n           \"dateOfTheft\": \"1995-12-06T20:00:00.000Z\",\n           \"license\": \"li\",\n           \"theftDescription\": \"market\",\n           \"status\": \"New\",\n           \"updatedAt\": \"2019-03-25T18:13:21.681Z\",\n           \"createdAt\": \"2019-03-25T18:13:21.681Z\",\n           \"officerId\": null\n       }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Bad Request 400": [
+          {
+            "group": "Bad Request 400",
+            "optional": false,
+            "field": "ValidationError",
+            "description": "<p>Some parameters may contain invalid values</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "List error",
+          "content": "{\n\"status\": false,\n\"code\": 400,\n\"appVersion\": \"v1.0.0\",\n\"message\": \"value must have at least 4 children\",\n\"result\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/api/routes/case.route.ts",
+    "groupTitle": "case"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/case/find",
+    "title": "find cases",
+    "description": "<p>to search cases based on different characteristics</p>",
+    "version": "1.0.0",
+    "name": "find",
+    "group": "case",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id of case</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license",
+            "description": "<p>license of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "color",
+            "description": "<p>color  of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type  of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "dateOfTheft",
+            "description": "<p>dateOfTheft of bike</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>status of case</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "officerId",
+            "description": "<p>id of officer that has been assinged to the case</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "perPage",
+            "description": "<p>records per page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>page no starts with 0</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id of case</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "license",
+            "description": "<p>license of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "color",
+            "description": "<p>color  of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type  of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner name</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dateOfTheft",
+            "description": "<p>dateOfTheft of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "theftDescription",
+            "description": "<p>theftDescription</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>status of case</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "officerId",
+            "description": "<p>id of officer that has been assinged to the case</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \"status\": true,\n \"code\": 200,\n \"message\": \"Sucess\",\n \"appVersion\": \"v1.0.0\",\n \"result\": {\n   \"cases\": [\n      {\n          \"id\": 4,\n          \"color\": \"blue\",\n          \"type\": \"sports\",\n          \"owner\": \"yogesh\",\n           \"dateOfTheft\": \"1995-12-06T20:00:00.000Z\",\n           \"license\": \"li\",\n           \"theftDescription\": \"market\",\n           \"status\": \"New\",\n           \"updatedAt\": \"2019-03-25T18:13:21.681Z\",\n           \"createdAt\": \"2019-03-25T18:13:21.681Z\",\n           \"officerId\": null\n       },\n      {\n          \"id\": 2,\n          \"color\": \"black\",\n          \"type\": \"tour\",\n          \"owner\": \"dharam\",\n           \"dateOfTheft\": \"1995-12-06T20:00:00.000Z\",\n           \"license\": \"licence\",\n           \"theftDescription\": \"market\",\n           \"status\": \"New\",\n           \"updatedAt\": \"2019-03-25T18:13:21.681Z\",\n           \"createdAt\": \"2019-03-25T18:13:21.681Z\",\n           \"officerId\": null\n       }\n    ],\n \"totalCases\": 20\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Bad Request 400": [
+          {
+            "group": "Bad Request 400",
+            "optional": false,
+            "field": "ValidationError",
+            "description": "<p>Some parameters may contain invalid values</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "List error",
+          "content": "{\n\"status\": false,\n\"code\": 400,\n\"appVersion\": \"v1.0.0\",\n\"message\": \"value must have at least 4 children\",\n\"result\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/api/routes/case.route.ts",
+    "groupTitle": "case"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/case/resolve",
+    "title": "resolve case",
+    "description": "<p>resolve a case</p>",
+    "version": "1.0.0",
+    "name": "resolve",
+    "group": "case",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "caseId",
+            "description": "<p>id of case</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "license",
+            "description": "<p>license of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "color",
+            "description": "<p>color  of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type  of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner name</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "dateOfTheft",
+            "description": "<p>dateOfTheft of bike</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "theftDescription",
+            "description": "<p>theftDescription</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>status of case</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "officerId",
+            "description": "<p>id of officer that has been assinged to the case</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \"status\": true,\n \"code\": 200,\n \"message\": \"Sucess\",\n \"appVersion\": \"v1.0.0\",\n \"result\": \n      {\n          \"id\": 4,\n          \"color\": \"blue\",\n          \"type\": \"sports\",\n          \"owner\": \"yogesh\",\n           \"dateOfTheft\": \"1995-12-06T20:00:00.000Z\",\n           \"license\": \"li\",\n           \"theftDescription\": \"market\",\n           \"status\": \"Resolved\",\n           \"updatedAt\": \"2019-03-25T18:13:21.681Z\",\n           \"createdAt\": \"2019-03-25T18:13:21.681Z\",\n           \"officerId\": null\n       }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Bad Request 400": [
+          {
+            "group": "Bad Request 400",
+            "optional": false,
+            "field": "ValidationError",
+            "description": "<p>Some parameters may contain invalid values</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "List error",
+          "content": "{\n\"status\": false,\n\"code\": 400,\n\"appVersion\": \"v1.0.0\",\n\"message\": \"value must have at least 4 children\",\n\"result\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/api/routes/case.route.ts",
+    "groupTitle": "case"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/department/add",
+    "title": "add department",
+    "description": "<p>add a department</p>",
+    "version": "1.0.0",
+    "name": "add",
+    "group": "department",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>department name</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>department's id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>department's name</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Sucess\",\n    \"appVersion\": \"v1.0.0\",\n    \"result\":\n      {\n        \"id\": 1,\n        \"name\": \"NYPD\",\n        \"updatedAt\": \"2019-03-25T10:53:22.137Z\",\n        \"createdAt\": \"2019-03-25T10:53:22.137Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Bad Request 400": [
+          {
+            "group": "Bad Request 400",
+            "optional": false,
+            "field": "ValidationError",
+            "description": "<p>Some parameters may contain invalid values</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "List error",
+          "content": "{\n\"status\": false,\n\"code\": 400,\n\"appVersion\": \"v1.0.0\",\n\"message\": \"value must have at least 4 children\",\n\"result\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/api/routes/department.route.ts",
+    "groupTitle": "department"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/officer/add",
+    "title": "add officer",
+    "description": "<p>add a officer</p>",
+    "version": "1.0.0",
+    "name": "add",
+    "group": "officer",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>officer name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "departmentId",
+            "description": "<p>department Id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>officer's id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>officer's name</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "departmentId",
+            "description": "<p>department Id</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Sucess\",\n    \"appVersion\": \"v1.0.0\",\n    \"result\": \n      {\n        \"id\": 1,\n        \"name\": \"yogesh\",\n        \"departmentId\":3,\n        \"updatedAt\": \"2019-03-25T10:53:22.137Z\",\n        \"createdAt\": \"2019-03-25T10:53:22.137Z\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Bad Request 400": [
+          {
+            "group": "Bad Request 400",
+            "optional": false,
+            "field": "ValidationError",
+            "description": "<p>Some parameters may contain invalid values</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "List error",
+          "content": "{\n\"status\": false,\n\"code\": 400,\n\"appVersion\": \"v1.0.0\",\n\"message\": \"value must have at least 4 children\",\n\"result\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/api/routes/officer.route.ts",
+    "groupTitle": "officer"
+  }
+]
